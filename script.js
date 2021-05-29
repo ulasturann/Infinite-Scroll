@@ -1,22 +1,39 @@
 const imageContainer = document.getElementById('image-container');
 const loader = document.getElementById('loader');
+const toTop = document.querySelector('.to-top');
 let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 //Unsplash API
-const count = 30;
+const count = 5;
 const apiKey = 'mmRnsB1DOSSdwb12h9R07WpT8F5tUTs4wO_UUXudep0';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
+// Can scroll up with this button
+window.addEventListener('scroll', () => {
+
+    if(window.pageYOffset > 1000) {
+        toTop.classList.add('active');
+    } else {
+        toTop.classList.remove('active');
+    }
+});
 
 //Chech if all images were loaded
 function imageLoaded (){
 console.log('image loaded');
 imagesLoaded++;
 if(imagesLoaded === totalImages) {
-loader.hidden = true;
 ready = true;
-console.log('ready =', ready);
+loader.hidden = true;
+count = 30
 }
 }
 
