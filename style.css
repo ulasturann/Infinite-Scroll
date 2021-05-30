@@ -22,6 +22,7 @@ h1 {
 /* Scroll To Top Button */
 
 .to-top {
+  outline: none;
   position: fixed;
   display: flex;
   background: white;
