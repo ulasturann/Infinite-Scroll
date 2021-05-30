@@ -10,6 +10,17 @@ const count = 5;
 const apiKey = 'mmRnsB1DOSSdwb12h9R07WpT8F5tUTs4wO_UUXudep0';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
+//Check if all images were loaded
+function imageLoaded (){
+    console.log('image loaded');
+    imagesLoaded++;
+    if(imagesLoaded === totalImages) {
+    ready = true;
+    loader.hidden = true;
+    count = 30
+    }
+    }
+
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
@@ -26,16 +37,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-//Chech if all images were loaded
-function imageLoaded (){
-console.log('image loaded');
-imagesLoaded++;
-if(imagesLoaded === totalImages) {
-ready = true;
-loader.hidden = true;
-count = 30
-}
-}
 
 function setAttributes(element, attributes) {
     for (const key in attributes){

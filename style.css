@@ -22,7 +22,6 @@ h1 {
 /* Scroll To Top Button */
 
 .to-top {
-  cursor: pointer;
   position: fixed;
   display: flex;
   background: white;
@@ -43,6 +42,7 @@ h1 {
 }
 
 .to-top.active {
+  cursor: pointer;
   bottom: 32px;
   pointer-events: auto;
   opacity: 1;
