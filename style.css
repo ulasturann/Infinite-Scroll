@@ -20,7 +20,6 @@ h1 {
   letter-spacing: 5px;
 }
 /* Scroll To Top Button */
-
 .to-top {
   outline: none;
   position: fixed;
@@ -47,6 +46,9 @@ h1 {
   bottom: 32px;
   pointer-events: auto;
   opacity: 1;
+}
+button:focus {
+  outline: 0;
 }
 /* Loader */
 
